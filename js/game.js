@@ -62,8 +62,6 @@ $(".submit-btn").click(function() {
 			"opacity": 0,
 			"margin-top": "7rem"
 		}, 500);
-
-		$(".submit-box").val("");
 	}
 });
 
