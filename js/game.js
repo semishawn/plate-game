@@ -35,23 +35,36 @@ $(document).ready(function() {
 $(".submit-btn").click(function() {
 	var wordInput = $(".submit-box").val()
 
-	// Check if word entered exists in English
-	if (wordList.includes(wordInput)) {
-		var firstCheck = wordInput.slice(0, 1) == letter1;
-		var middleCheck = (wordInput.slice(1, -1)).includes(letter2);
-		var lastCheck = wordInput.slice(-1) == letter3;
+	// Check if entered word matches letters
+	var firstCheck = wordInput.slice(0, 1) == letter1;
+	var middleCheck = (wordInput.slice(1, -1)).includes(letter2);
+	var lastCheck = wordInput.slice(-1) == letter3;
 
-		if (firstCheck && middleCheck && lastCheck) {
-			// "+" + wordInput.length + " points!"
-			var currentScore = $(".score-amount").html();
-			var newScore = parseFloat(currentScore) + wordInput.length;
-			$(".score-amount").html(newScore);
-		}
+	if (firstCheck && middleCheck && lastCheck && wordList.includes(wordInput)) {
+		var currentScore = $(".score-amount").html();
+		var newScore = parseFloat(currentScore) + wordInput.length;
+		var pointsDiv = $(`<div class="points-message">+${wordInput.length} points!</div>`);
+		pointsDiv.appendTo($(".score-container")).animate({
+			"display": "none",
+			"opacity": 0,
+			"margin-top": "7rem"
+		}, 500);
+		$(".score-amount").html(newScore);
 
 		startGame();
 		$(".submit-box").val("");
 	}
-	else $(".score").html("That's not a word!");
+
+	else {
+		var wrongDiv = $(`<div class="wrong-message">Hmm...</div>`);
+		wrongDiv.appendTo($(".score-container")).animate({
+			"display": "none",
+			"opacity": 0,
+			"margin-top": "7rem"
+		}, 500);
+
+		$(".submit-box").val("");
+	}
 });
 
 
@@ -66,6 +79,7 @@ $(document).keyup(function(e) {
 // Skip function
 $(".skip-btn").click(function() {
 	startGame();
+	$(".submit-box").val("");
 });
 
 

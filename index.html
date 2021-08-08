@@ -14,6 +14,7 @@
 
 	<link rel="stylesheet" href="css/variables.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="css/mobile.css">
 </head>
 
 <body>
@@ -31,13 +32,12 @@
 		<input class="submit-box" type="text" placeholder="What word can you find?" autocomplete="off">
 	</div>
 
-	<button class="btn submit-btn"><i class="fas fa-truck"></i>Drive!</button>
+	<button class="btn submit-btn"><i class="fas fa-car-side"></i>Drive!</button>
 	<button class="btn skip-btn"><i class="fas fa-shipping-fast"></i>Detour!</button>
 	<button class="btn stop-btn"><i class="fas fa-car-crash"></i>Crash!</button>
 
-	<div class="score">
-		<span class="score-amount">0</span>
-		<span> points</span>
+	<div class="score-container">
+		<div class="current-score"><span class="score-amount">0</span> points</div>
 	</div>
 
 	<script src="js/words.js"></script>

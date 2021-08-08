@@ -94,6 +94,7 @@ body {
 .submit-box::placeholder {color: #999;}
 
 .btn {
+	font-size: 1.2rem;
 	font-weight: 600;
 	padding: 0.4em 0.9em;
 	border: 0;
@@ -106,24 +107,39 @@ body {
 .btn:hover {transform: scale(1.1);}
 .btn ~ .btn {margin-top: 0.7rem;}
 
-.submit-btn {
-	font-size: 1.4rem;
-	background: #64e27d;
-}
-.skip-btn {
-	font-size: 1.1rem;
-	background: #ffda66;
-}
-.stop-btn {
-	font-size: 0.8rem;
-	background: #ff684c;
+.submit-btn {background: #64e27d;}
+.skip-btn {background: #ffda66;}
+.stop-btn {background: #ff684c;}
+
+
+
+/* Score */
+.score-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 18rem;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: #070;
 }
 
-.score {
+.points-message, .wrong-message {
 	position: absolute;
-	top: 1rem;
-	left: 2rem;
-	font-size: 2.5rem;
-	font-weight: 600;
-	color: #070;
+	font-size: 2rem;
+	margin-top: 4rem;
+}
+
+.points-message {
+	color: #0a0;
+	transform: rotate(-5deg);
+}
+
+.wrong-message {
+	color: #700;
+	transform: rotate(5deg);
 }
