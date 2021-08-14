@@ -3,3 +3,5 @@
 .submit-box {margin: 5rem 0;}
 
 .btn {font-size: 2.5rem;}
+.btn:hover {transform: scale(1);}
+.btn ~ .btn {margin-top: 1rem;}
