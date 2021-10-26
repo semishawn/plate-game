@@ -45,11 +45,7 @@ $(".submit-btn").click(function() {
 		var currentScore = $(".score-amount").html();
 		var newScore = parseFloat(currentScore) + wordInput.length;
 		var pointsDiv = $(`<div class="points-message">+${wordInput.length} points!</div>`);
-		pointsDiv.appendTo($(".score-container")).animate({
-			"display": "none",
-			"opacity": 0,
-			"margin-top": "7rem"
-		}, 500);
+		addScore(pointsDiv);
 		$(".score-amount").html(newScore);
 
 		startGame();
@@ -58,11 +54,7 @@ $(".submit-btn").click(function() {
 
 	else {
 		var wrongDiv = $(`<div class="wrong-message">Hmm...</div>`);
-		wrongDiv.appendTo($(".score-container")).animate({
-			"display": "none",
-			"opacity": 0,
-			"margin-top": "7rem"
-		}, 500);
+		addScore(wrongDiv);
 	}
 });
 
@@ -86,5 +78,17 @@ $(".skip-btn").click(function() {
 // Stop game with crash button
 $(".stop-btn").click(function() {
 	startGame();
+	var div = $(`<div class="wrong-message">Score reset!</div>`);
+	addScore(div)
 	$(".score-amount").html("0");
 });
+
+
+
+function addScore(e) {
+	e.appendTo($(".score-container")).animate({
+		"display": "none",
+		"opacity": 0,
+		"margin-top": "7rem"
+	}, 500);
+}

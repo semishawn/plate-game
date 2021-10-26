@@ -75,9 +75,10 @@ body {
 
 .plate-number * {font-family: 'License Plate';}
 
-.plate-space {
-	height: 100%;
+.plate-icon {
 	width: 3rem;
+	margin: 0 10px;
+	margin-bottom: 20px;
 }
 
 
@@ -132,6 +133,7 @@ body {
 	position: absolute;
 	font-size: 2rem;
 	margin-top: 4rem;
+	white-space: nowrap;
 }
 
 .points-message {
