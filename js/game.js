@@ -14,8 +14,7 @@ function startGame() {
 	function makeNumString(num) {
 		var string = "";
 		var digits = "0123456789";
-		for (var i = 0; i < num; i++)
-			string += digits.charAt(Math.floor(Math.random() * digits.length));
+		for (var i = 0; i < num; i++) string += digits.charAt(Math.floor(Math.random() * digits.length));
 		return string;
 	}
 	var numString = makeNumString(4);
@@ -33,15 +32,15 @@ $(document).ready(function() {
 
 
 // Submit word
-$(".submit-btn").click(function() {
-	var wordInput = $(".submit-box").val()
+function submit() {
+	var wordInput = $(".word-input").val()
 
 	// Check if entered word matches letters
 	var firstCheck = wordInput.slice(0, 1) == letter1;
 	var middleCheck = (wordInput.slice(1, -1)).includes(letter2);
 	var lastCheck = wordInput.slice(-1) == letter3;
 
-	if (firstCheck && middleCheck && lastCheck && wordList.includes(wordInput)) {
+	if (wordList.includes(wordInput) && firstCheck && middleCheck && lastCheck) {
 		var currentScore = $(".score-amount").html();
 		var newScore = parseFloat(currentScore) + wordInput.length;
 		var pointsDiv = $(`<div class="points-message">+${wordInput.length} points!</div>`);
@@ -49,46 +48,74 @@ $(".submit-btn").click(function() {
 		$(".score-amount").html(newScore);
 
 		startGame();
-		$(".submit-box").val("");
-	}
+		$(".word-input").val("");
 
-	else {
+		$(".word-input").focus();
+	} else {
 		var wrongDiv = $(`<div class="wrong-message">Hmm...</div>`);
 		addScore(wrongDiv);
 	}
-});
-
-
-
-// Run submit function on enter press
-$(document).keyup(function(e) {
-	if (e.keyCode === 13) $(".submit-btn").click();
-});
+}
+$(".submit-btn").click(() => submit());
 
 
 
 // Skip round with detour button
-$(".skip-btn").click(function() {
+function skip() {
 	startGame();
-	$(".submit-box").val("");
-});
+	$(".word-input").val("");
+
+	$(".word-input").focus();
+}
+$(".skip-btn").click(() => skip());
 
 
 
 // Stop game with crash button
-$(".stop-btn").click(function() {
+function stop() {
 	startGame();
-	var div = $(`<div class="wrong-message">Score reset!</div>`);
+	var div = $(`<div class="wrong-message">Game reset!</div>`);
 	addScore(div)
 	$(".score-amount").html("0");
+
+	timeLeft = 30;
+	$(".time-left").html(timeLeft);
+
+	$(".word-input").focus();
+}
+$(".stop-btn").click(() => stop());
+
+
+
+// Keyboard controls
+$(document).keydown(function(e) {
+	if (e.keyCode === 13) submit();
+	if (e.keyCode === 9) {
+		e.preventDefault();
+		skip();
+	}
+	if (e.keyCode === 27) stop();
 });
 
 
 
+// Function to add score message in score container
 function addScore(e) {
+	var fontSize = parseFloat($(".score-container").css("--font-size"));
 	e.appendTo($(".score-container")).animate({
 		"display": "none",
 		"opacity": 0,
-		"margin-top": "7rem"
+		"margin-top": (fontSize * 2.8).toString() + "rem"
 	}, 500);
 }
+
+
+
+// Timer function
+timeLeft = parseInt($(".time-left").html());
+setInterval(function() {
+	if (timeLeft > 0) {
+		timeLeft--;
+		$(".time-left").html(timeLeft);
+	}
+}, 1000);

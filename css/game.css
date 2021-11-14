@@ -1,0 +1,156 @@
+body {perspective: 1000px;}
+
+/* License Plate */
+.license-plate {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 20rem;
+	width: 40rem;
+	border: 0.45rem solid var(--color1);
+	border-radius: 1.7rem;
+	background: white;
+	color: var(--color1);
+	overflow: hidden;
+	/* transition: all 1s;
+	transform-style: preserve-3d; */
+}
+/* .license-plate:hover {
+	transform: rotateX(180deg);
+} */
+
+.plate-state, .plate-motto {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3.5rem;
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 2.5rem;
+	font-weight: 700;
+}
+
+.plate-state {
+	top: 0;
+	background: var(--color1);
+	color: white;
+}
+
+.plate-motto {
+	padding-top: 0.5rem;
+	bottom: 0;
+	background: var(--color2);
+	color: var(--color1);
+}
+
+.plate-number {
+	display: flex;
+	font-size: 9rem;
+	padding-top: 1.7rem;
+}
+
+.plate-number * {font-family: 'License Plate';}
+
+.plate-icon {
+	width: 3rem;
+	margin: 0 10px;
+	margin-bottom: 20px;
+}
+
+
+
+/* Submitting */
+.word-input {
+	width: 100%;
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 600;
+	margin: 1.5rem 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+.word-input::placeholder {color: #999;}
+
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 12rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding: 0.3em 1em;
+	border: 0.2rem solid black;
+	border-radius: 0.35em;
+	background: var(--color2);
+	color: black;
+	transition: all 0.05s;
+	cursor: pointer;
+}
+.btn svg {margin-right: 0.6rem;}
+.btn kbd {
+	font-size: 0.75rem;
+	font-weight: 400;
+	padding: 0.1rem 0.5rem;
+	margin-left: 1rem;
+	border-radius: 0.2rem;
+	background: black;
+	color: white;
+}
+.btn:hover {width: 13.5rem;}
+.btn ~ .btn {margin-top: 0.4rem;}
+
+.submit-btn {background: #64e27d;}
+.skip-btn {background: #ffda66;}
+.stop-btn {background: #ff684c;}
+
+
+
+/* Score */
+.score-container, .timer-container {
+	--font-size: 3rem;
+	position: absolute;
+	top: 1rem;
+	font-size: var(--font-size);
+	font-weight: 700;
+}
+
+.score-container {
+	left: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #070;
+}
+
+.timer-container {
+	right: 2rem;
+	color: #700;
+}
+
+.points-message, .wrong-message {
+	position: absolute;
+	font-size: calc(var(--font-size) * 0.8);
+	margin-top: calc(var(--font-size) * 1.6);
+	white-space: nowrap;
+}
+
+.points-message {
+	color: #0b0;
+	transform: rotate(-5deg);
+}
+
+.wrong-message {
+	color: #b00;
+	transform: rotate(5deg);
+}
+
+
+
+/* Search Link */
+.search-link {right: 2rem;}
+.search-link:hover {transform: scale(1.1) rotate(10deg);}

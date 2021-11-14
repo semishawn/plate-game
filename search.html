@@ -12,15 +12,62 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/variables.css">
-
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/search.css">
 </head>
 
 <body>
-	<input class="letter-input letter-input1" type="text" maxlength="1" autocomplete="off">
-	<input class="letter-input letter-input2" type="text" maxlength="1" autocomplete="off">
-	<input class="letter-input letter-input3" type="text" maxlength="1" autocomplete="off">
+	<input class="letter-input" type="text" placeholder="Search a three letter combo" maxlength="3" autocomplete="off">
 
+	<div class="filtered-container">
+		<div class="immediate-container">
+			<div class="word-count">
+				<span>These letters correspond with</span>
+				<span class="actual-count">? words</span>
+			</div>
+
+			<div class="spacer-h"></div>
+
+			<div class="word-list"></div>
+
+			<div class="show-all-btn">Show All</div>
+		</div>
+
+		<div class="spacer-v"></div>
+
+		<div class="properties-container">
+			<div class="longest-container">
+				<span>Longest Word:</span>
+				<span class="actual-longest">...</span>
+			</div>
+
+			<div class="spacer-h"></div>
+
+			<div class="middlest-container">
+				<span>Middlest Word:</span>
+				<span class="actual-middlest">...</span>
+			</div>
+
+			<div class="spacer-h"></div>
+
+			<div class="shortest-container">
+				<span>Shortest Word:</span>
+				<span class="actual-shortest">...</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="filtered-words-information">
+		<div class="filtered-words-list"></div>
+		<div class="word-amount"></div>
+	</div>
+
+	<a class="link-btn game-link" href="game.html"><i class="fas fa-gamepad"></i></a>
+
+	<div class="body-block"></div>
+	<div class="all-container"></div>
+
+	<script src="js/words.js"></script>
 	<script src="js/search.js"></script>
 </body>
 
