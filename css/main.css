@@ -8,10 +8,10 @@ html, body {
 	--color2: #ffc706;
 	--color3: coral;
 	--line-height: 1.25em;
-	--spacing: 1.5rem;
+	--border-width: 0.4rem;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
 body {
@@ -33,8 +33,17 @@ body {
 	box-sizing: border-box;
 }
 
-.link-btn {
-	--dimension: 3.8rem;
+input[type="radio"] {display: none;}
+
+.show-block {display: block;}
+.show-flex {display: flex;}
+.show-grid {display: grid;}
+
+
+
+/* Buttons */
+.circle-btn {
+	--dimension: 4.5rem;
 	position: absolute;
 	bottom: 2rem;
 	display: flex;
@@ -42,11 +51,12 @@ body {
 	align-items: center;
 	height: var(--dimension);
 	width: var(--dimension);
-	font-size: 1.5rem;
-	border: 0.3rem solid var(--color1);
+	font-size: 1.8rem;
+	border: var(--border-width) solid var(--color1);
 	border-radius: 999rem;
 	background: white;
 	color: var(--color3);
 	transition: all 0.05s;
+	cursor: pointer;
 }
-.link-btn:hover {transform: scale(1.1) rotate(10deg);}
+.circle-btn:hover {transform: scale(1.1) rotate(10deg);}

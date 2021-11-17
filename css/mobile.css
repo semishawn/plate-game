@@ -5,8 +5,40 @@
 .btn {
 	width: 40rem;
 	font-size: 18px;
-	border-width: 2px;
+	border-width: 0.35rem;
+	border-radius: 999rem;
+	transition: none;
 }
 .btn kbd {display: none;}
-.btn:hover {transform: scale(1);}
+.btn:hover {width: 40rem;}
+.btn:active {
+	background: black;
+	color: white;
+}
 .btn ~ .btn {margin-top: 1rem;}
+
+.circle-btn:active {transform: scale(1.1) rotate(10deg);}
+
+
+
+/* Search */
+.letter-input::placeholder {font-size: 3rem;}
+
+.filtered-container {
+	flex-direction: column;
+	width: 40rem;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: transparent;
+}
+
+.immediate-container {
+	width: 100%;
+	margin: 0;
+	margin-bottom: var(--spacing);
+}
+
+.properties-container {width: 100%;}
+
+.body-block {padding: 3rem;}

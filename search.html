@@ -14,6 +14,7 @@
 
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/search.css">
+	<link rel="stylesheet" media="screen and (max-width: 600px)" href="css/mobile.css">
 </head>
 
 <body>
@@ -21,38 +22,27 @@
 
 	<div class="filtered-container">
 		<div class="immediate-container">
-			<div class="word-count">
-				<span>These letters correspond with</span>
-				<span class="actual-count">? words</span>
-			</div>
+			<div class="word-count">These letters correspond with <span class="actual-count">?</span> words:</div>
 
-			<div class="spacer-h"></div>
-
-			<div class="word-list"></div>
+			<div class="sample-word-list"></div>
 
 			<div class="show-all-btn">Show All</div>
 		</div>
 
-		<div class="spacer-v"></div>
-
 		<div class="properties-container">
 			<div class="longest-container">
 				<span>Longest Word:</span>
-				<span class="actual-longest">...</span>
+				<span class="actual-longest">?</span>
 			</div>
-
-			<div class="spacer-h"></div>
 
 			<div class="middlest-container">
 				<span>Middlest Word:</span>
-				<span class="actual-middlest">...</span>
+				<span class="actual-middlest">?</span>
 			</div>
-
-			<div class="spacer-h"></div>
 
 			<div class="shortest-container">
 				<span>Shortest Word:</span>
-				<span class="actual-shortest">...</span>
+				<span class="actual-shortest">?</span>
 			</div>
 		</div>
 	</div>
@@ -62,10 +52,21 @@
 		<div class="word-amount"></div>
 	</div>
 
-	<a class="link-btn game-link" href="game.html"><i class="fas fa-gamepad"></i></a>
+	<a class="circle-btn game-link" href="game.html"><i class="fas fa-gamepad"></i></a>
 
-	<div class="body-block"></div>
-	<div class="all-container"></div>
+	<div class="body-block">
+		<div class="all-container">
+			<div class="circle-btn close-all-btn"><i class="fas fa-times"></i></div>
+			<div class="sort-container">
+				<input type="radio" name="sort" id="alpha-sort" autocomplete="off" checked>
+				<label for="alpha-sort">Sort Alphabetically</label>
+
+				<input type="radio" name="sort" id="length-sort" autocomplete="off">
+				<label for="length-sort">Sort by Word Length</label>
+			</div>
+			<div class="all-word-list"></div>
+		</div>
+	</div>
 
 	<script src="js/words.js"></script>
 	<script src="js/search.js"></script>
