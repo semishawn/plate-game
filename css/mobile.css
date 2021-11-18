@@ -40,9 +40,11 @@
 .immediate-container {
 	width: 100%;
 	margin: 0;
-	margin-bottom: var(--spacing);
+	margin-bottom: calc(1.5 * var(--spacing));
 }
 
 .properties-container {width: 100%;}
+
+.middlest-container {margin: calc(1.5 * var(--spacing)) 0;}
 
 .body-block {padding: 3rem;}
