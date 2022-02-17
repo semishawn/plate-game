@@ -24,14 +24,9 @@ $(".letter-input").on("propertychange input", function() {
 		}
 		var filtered = wordList.filter(filters);
 
-		// All words in HTML format
+		// Convert words to HTML format
 		var filteredAllHtml = "";
-		for (word in filtered) filteredAllHtml += ("<div class=\"filtered-word\">" + filtered[word] + "</div>");
-
-		// Sample list of words in HTML format
-		var sampleNum = 10;
-		var filteredSampleHtml = "";
-		for (word in filtered.slice(0, sampleNum)) filteredSampleHtml += ("<div class=\"filtered-word\">" + filtered[word] + "</div>");
+		for (word in filtered) filteredAllHtml += (`<div class="filtered-word">${filtered[word]}</div>`);
 
 		// Calculate word with most characters in filtered array
 		var longest = filtered.reduce(function(a, b) {
@@ -50,30 +45,53 @@ $(".letter-input").on("propertychange input", function() {
 			return a.length <= b.length ? a : b;
 		});
 
+
+		// On finish
 		$(".actual-count").html(filtered.length);
+
 		var sampleList = $(".sample-word-list");
 		sampleList.html(filteredAllHtml);
 		if (sampleList[0].offsetHeight < sampleList[0].scrollHeight) $(".show-all-btn").css("visibility", "visible");
+
 		$(".actual-longest").html(longest);
 		$(".actual-middlest").html(middlest);
 		$(".actual-shortest").html(shortest);
+
 		$(".all-word-list").html(filteredAllHtml);
 	} else {
-		$(".actual-count").html("?");
+		$(".actual-count").html("0");
 		$(".sample-word-list").html("");
 		$(".show-all-btn").css("visibility", "hidden");
-		$(".actual-longest").html("?");
-		$(".actual-middlest").html("?");
-		$(".actual-shortest").html("?");
+		$(".actual-longest, .actual-middlest, .actual-shortest").html("???");
 	}
 });
 
 
 
 $(".show-all-btn").click(function() {
-	$("body").addClass("show-dialogue");
+	showDialogue(".all-container");
 });
 
 $(".close-all-btn").click(function() {
-	$("body").removeClass("show-dialogue");
+	hideDialogue();
+});
+
+
+
+$("input[name='sort']").change(function() {
+	var words = $(".all-word-list .filtered-word");
+	
+	if ($(this).is("#alpha-sort")) {
+		words.sort(function(a, b) {
+			if ($(a).text() < $(b).text()) return -1;
+			if ($(a).text() > $(b).text()) return 1;
+			return 0;
+		}).appendTo(words.parent());
+	}
+
+	else if ($(this).is("#length-sort")) {
+		words.sort(function(a, b) {
+			return $(a).text().length < $(b).text().length;
+		}).appendTo(words.parent());
+	}
 });

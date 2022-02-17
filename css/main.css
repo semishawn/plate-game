@@ -4,14 +4,10 @@
 }
 
 html, body {
-	--color1: #01447b;
-	--color2: #ffc706;
-	--color3: coral;
-	--line-height: 1.25em;
-	--border-width: 0.4rem;
 	height: 100%;
 	width: 100%;
 	overflow-x: hidden;
+	touch-action: manipulation;
 }
 
 body {
@@ -21,7 +17,8 @@ body {
 	align-items: center;
 	font-size: 15px;
 	margin: 0;
-	background: #ddd;
+	background: var(--color3);
+	color: var(--color1);
 	/* filter: blur(10px); */
 }
 
@@ -29,11 +26,17 @@ body {
 	font-family: 'Saira Semi Condensed', sans-serif;
 	padding: 0;
 	margin: 0;
+	/* transition: all var(--transition); */
 	-webkit-tap-highlight-color: transparent;
 	box-sizing: border-box;
 }
 
 input[type="radio"] {display: none;}
+
+input[type="text"]::placeholder {
+	opacity: 0.3;
+	color: var(--color1);
+}
 
 .show-block {display: block;}
 .show-flex {display: flex;}
@@ -41,7 +44,56 @@ input[type="radio"] {display: none;}
 
 
 
+/* General Styles */
+.body-block {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow-y: scroll;
+	z-index: 9999;
+}
+
+.show-dialogue .body-block {display: flex;}
+.show-dialogue > *:not(.body-block) {filter: blur(0.5rem);}
+
+.intro-container,
+.end-container,
+.immediate-container,
+.properties-container > *,
+.all-container {
+	padding: calc(1.5 * var(--container-spacing));
+	border: var(--container-border-width) solid var(--color1);
+	border-radius: 1rem;
+	background: white;
+	filter: var(--drop-shadow);
+}
+
+
+
 /* Buttons */
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3rem;
+	font-size: 1.2rem;
+	font-weight: 600;
+	border: 0;
+	border-radius: var(--input-radius);
+	color: black;
+	transform: skewX(var(--input-skew));
+	transition: all var(--transition);
+	cursor: pointer;
+}
+.btn svg {
+	margin-right: 0.8rem;
+	transform: skewX(calc(-1 * var(--input-skew)));
+}
+
 .circle-btn {
 	--dimension: 4.5rem;
 	position: absolute;
@@ -52,11 +104,21 @@ input[type="radio"] {display: none;}
 	height: var(--dimension);
 	width: var(--dimension);
 	font-size: 1.8rem;
-	border: var(--border-width) solid var(--color1);
+	border: var(--container-border-width) solid var(--color1);
 	border-radius: 999rem;
-	background: white;
-	color: var(--color3);
-	transition: all 0.05s;
+	background: var(--color2);
+	color: var(--color1);
+	filter: var(--drop-shadow);
+	transition: all var(--transition);
 	cursor: pointer;
 }
-.circle-btn:hover {transform: scale(1.1) rotate(10deg);}
+.circle-btn:hover {
+	background: var(--color1);
+	color: var(--color2);
+	/* transform: scale(1.1) rotate(10deg); */
+}
+
+
+
+/* This has to be down here */
+.flex-show {display: flex !important;}

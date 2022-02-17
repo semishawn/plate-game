@@ -1,32 +1,25 @@
+/* General Styles */
 :root {font-size: 8px;}
+
+.body-block {padding: 3rem;}
+
+
+
+/* Play */
+.intro-container {width: calc(100% - 6rem);}
 
 .word-input {margin: 5rem 0;}
 
-.btn {
-	width: 40rem;
-	font-size: 18px;
-	border-width: 0.35rem;
-	border-radius: 999rem;
-	transition: none;
-}
-.btn kbd {display: none;}
-.btn:hover {width: 40rem;}
-.btn:active {
-	background: black;
-	color: white;
-}
-.btn ~ .btn {margin-top: 1rem;}
+.submit-btn {display: none;}
 
-.circle-btn:active {transform: scale(1.1) rotate(10deg);}
+.keyboard {display: flex;}
 
 
 
 /* Search */
 .letter-input::placeholder {font-size: 3rem;}
 
-.filtered-container, .all-container {
-	font-size: 1.6rem;
-}
+.filtered-container, .all-container {font-size: 1.6rem;}
 
 .filtered-container {
 	flex-direction: column;
@@ -40,11 +33,9 @@
 .immediate-container {
 	width: 100%;
 	margin: 0;
-	margin-bottom: calc(1.5 * var(--spacing));
 }
 
-.properties-container {width: 100%;}
-
-.middlest-container {margin: calc(1.5 * var(--spacing)) 0;}
-
-.body-block {padding: 3rem;}
+.properties-container {
+	width: 100%;
+	margin-top: var(--container-spacing);
+}

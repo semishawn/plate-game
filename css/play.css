@@ -1,0 +1,279 @@
+/* video {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	opacity: 0.5;
+} */
+
+
+
+.game-content {
+	position: relative;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+
+
+/* License Plate */
+.license-plate {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20rem;
+	width: 40rem;
+}
+
+.plate-background {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	filter: var(--drop-shadow);
+	pointer-events: none;
+}
+
+.plate-number {
+	display: flex;
+	align-items: center;
+	z-index: 9999;
+}
+
+.plate-number * {font-family: 'License Plate';}
+
+.plate-number svg {margin-bottom: 1rem;}
+
+
+
+/* Submitting */
+.word-input {
+	width: 100%;
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 600;
+	margin: 3rem 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+	color: var(--color1);
+	transform: skewX(var(--input-skew));
+}
+
+.submit-btn {
+	width: 14rem;
+	border: 0.2rem solid black;
+	background: #64e27d;
+	color: black;
+	filter: var(--drop-shadow);
+}
+.submit-btn:hover {
+	background: black;
+	color: white;
+}
+
+.submit-btn kbd {
+	font-size: 0.75rem;
+	font-weight: 400;
+	padding: 0.1rem 0.5rem;
+	margin-left: 1rem;
+	border-radius: 0.2rem;
+	background: black;
+	color: white;
+	transition: all var(--transition);
+}
+.submit-btn:hover kbd {
+	background: white;
+	color: black;
+}
+
+.skip-btn {background: #ffda66;}
+.stop-btn {background: #ff684c;}
+
+
+
+/* Score */
+.score-container, .timer-container {
+	--font-size: 3rem;
+	--spacing: 2.5rem;
+	position: absolute;
+	top: calc(var(--spacing) / 2);
+	font-size: var(--font-size);
+	font-weight: 700;
+}
+
+.score-container {
+	left: var(--spacing);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #0a0;
+}
+
+.timer-container {
+	right: var(--spacing);
+	color: #a00;
+}
+
+.points-message, .wrong-message {
+	position: absolute;
+	font-size: calc(var(--font-size) * 0.8);
+	margin-top: calc(var(--font-size) * 1.6);
+	white-space: nowrap;
+}
+
+.points-message {
+	color: #0b0;
+	transform: rotate(-5deg);
+}
+
+.wrong-message {
+	color: #b00;
+	transform: rotate(5deg);
+}
+
+
+
+/* Intro */
+.intro-container {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 50rem;
+	padding: calc(2 * var(--container-spacing));
+}
+.intro-container, .intro-container * {font-size: 1.2rem;}
+
+.intro-container > * {width: 100%;}
+
+.welcome {
+	font-size: 2rem;
+	font-weight: 800;
+	transform: skewX(var(--input-skew));
+}
+
+.how-to-play {
+	font-weight: 700;
+	margin-top: calc(2 * var(--container-spacing));
+	transform: skewX(var(--input-skew));
+}
+
+.intro-directions-container {
+	margin: calc(2 * var(--container-spacing)) 0;
+}
+
+.intro-container .btn {
+	background: var(--color2);
+	color: var(--color1);
+}
+.intro-container .btn:hover {
+	background: var(--color1);
+	color: var(--color2);
+}
+
+.play-today-btn {
+	width: 50%;
+	transform: skewX(var(--input-skew));
+}
+
+.play-random-btn {
+	width: 50%;
+	margin-top: var(--input-spacing);
+	transform: skewX(var(--input-skew));
+}
+
+.seed-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	border-radius: var(--input-radius);
+	margin-top: var(--input-spacing);
+	transform: skewX(var(--input-skew));
+	overflow: hidden;
+}
+
+.seed-input {
+	width: 50%;
+	text-align: center;
+	font-weight: 500;
+	padding: 0.3em 1em;
+	border: 0;
+	outline: 0;
+	background: var(--color3);
+	color: var(--color1);
+}
+
+.play-seed-btn {
+	width: 50%;
+	border-radius: 0;
+	transform: none;
+}
+
+
+/* End Container */
+.end-container {
+	display: none;
+	width: 50rem;
+}
+
+
+
+/* Circle Buttons */
+.search-link {
+	bottom: 2rem;
+	right: 2rem;
+}
+
+.info-btn {
+	bottom: 2rem;
+	left: 2rem;
+}
+
+
+
+/* Mobile Keyboard */
+.keyboard {
+	--key-spacing: calc(var(--input-spacing) / 2);
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	padding: var(--input-spacing);
+}
+
+.drive-btn-mobile, .key {
+	height: 7vh;
+	font-size: 1.5rem;
+	border-radius: 0.35em;
+	cursor: pointer;
+}
+
+.drive-btn-mobile {
+	font-weight: 600;
+	border: 0.2rem solid black;
+	background: #64e27d;
+}
+.drive-btn-mobile svg {margin-right: 0.6rem;}
+
+.key-row {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: var(--key-spacing);
+}
+
+.key {
+	width: calc((100% - 9 * var(--key-spacing)) / 10);
+	font-weight: 500;
+	border: 0;
+	background: black;
+	color: white;
+}
+.key ~ .key {margin-left: var(--key-spacing);}
+
+.special-key {width: calc(15% - var(--key-spacing));}

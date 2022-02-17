@@ -1,0 +1,18 @@
+:root {
+	/* Colors */
+	--color1: #584053;
+	--color2: #fcbc66;
+	--color3: #ded6d6;
+
+	/* Container Variables */
+	--line-height: 1.25em;
+	--container-border-width: 0.4rem;
+	--container-spacing: 1rem;
+	--transition: 0.1s;
+	--drop-shadow: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
+
+	/* Input Variables */
+	--input-spacing: 0.4rem;
+	--input-radius: 0.35rem;
+	--input-skew: -9deg;
+}

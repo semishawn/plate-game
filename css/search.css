@@ -1,9 +1,18 @@
 body {
-	--spacing: 1rem;
 	--word-margin-v: 0.1rem;
 	--word-margin-h: 0.5rem;
 	font-size: 1.2rem;
+	font-weight: 500;
+	line-height: var(--line-height);
 }
+
+.body-block {
+	justify-content: flex-start;
+	padding: 3rem 5rem;
+	padding-top: 4rem;
+}
+
+
 
 /* Letter Input */
 .letter-input {
@@ -14,7 +23,7 @@ body {
 	width: 100%;
 	font-family: 'License Plate';
 	font-size: var(--font-size);
-	margin-bottom: var(--spacing);
+	margin-bottom: var(--container-spacing);
 	border: 0;
 	outline: 0;
 	background: transparent;
@@ -24,7 +33,6 @@ body {
 	font-family: 'Saira Semi Condensed', sans-serif;
 	font-size: calc(var(--font-size) / 2);
 	font-weight: 600;
-	color: #999;
 }
 
 
@@ -34,15 +42,6 @@ body {
 	position: relative;
 	display: flex;
 	align-items: center;
-	color: var(--color1);
-	line-height: var(--line-height);
-}
-
-.immediate-container, .properties-container > * {
-	padding: calc(1.5 * var(--spacing));
-	border: var(--border-width) solid var(--color1);
-	border-radius: 1rem;
-	background: white;
 }
 
 .immediate-container {
@@ -52,10 +51,10 @@ body {
 	text-align: center;
 	height: 100%;
 	width: 25rem;
-	margin-right: var(--spacing);
+	margin-right: var(--container-spacing);
 }
 
-.word-count {margin-bottom: var(--spacing);}
+.word-count {margin-bottom: var(--container-spacing);}
 
 .sample-word-list {
 	--word-lines: 7;
@@ -72,15 +71,12 @@ body {
 .show-all-btn {
 	visibility: hidden;
 	width: 100%;
-	padding: 0.5rem 0;
-	margin-top: var(--spacing);
-	border-radius: 0.4rem;
-	transition: all 0.1s;
-	cursor: pointer;
+	margin-top: var(--container-spacing);
+	color: var(--color1);
 }
 .show-all-btn:hover {
-	background: var(--color3);
-	color: white; 
+	background: var(--color1);
+	color: var(--color2); 
 }
 
 
@@ -104,59 +100,39 @@ body {
 	width: 100%;
 	white-space: nowrap;
 }
-.middlest-container {margin: var(--spacing) 0;}
+.middlest-container {margin: var(--container-spacing) 0;}
 
 .actual-count,
 .sample-word-list,
 .properties-container > * > *:nth-child(2),
 .all-word-list {
-	color: var(--color3);
+	color: var(--color2);
 }
 
 
 
 /* Show All Words */
-.body-block {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	padding: 3rem 5rem;
-	padding-top: 4rem;
-	background: #0002;
-	overflow-y: scroll;
-}
-
 .all-container {
 	position: relative;
-	text-align: center;
-	opacity: 1;
-	padding: calc(2 * var(--spacing));
-	border: var(--border-width) solid var(--color1);
-	border-radius: var(--spacing);
-	background: white !important;
+	flex-direction: column;
 }
 
 .sort-container {
 	display: flex;
 	justify-content: center;
-	margin-bottom: var(--spacing);
+	margin-bottom: var(--container-spacing);
 }
 
-.sort-container label {
+.sort-container .btn {
 	opacity: 0.5;
-	padding: calc(var(--spacing) / 2) var(--spacing);
-	border-radius: 0.4rem;
-	transition: all 0.1s;
-	cursor: pointer;
+	width: 15rem;
+	color: var(--color1);
 }
-.sort-container label:hover {opacity: 1;}
+.sort-container .btn:hover {opacity: 1;}
 input[name="sort"]:checked + label {
 	opacity: 1;
-	background: var(--color3);
-	color: white;
+	background: var(--color1);
+	color: var(--color2);
 }
 
 .all-word-list {
@@ -168,10 +144,8 @@ input[name="sort"]:checked + label {
 .close-all-btn {
 	top: calc(var(--dimension) / -2);
 	right: calc(var(--dimension) / -2);
+	filter: none;
 }
-
-.show-dialogue > *:not(.body-block) {filter: blur(0.5rem);}
-.show-dialogue .body-block {display: flex;}
 
 
 
