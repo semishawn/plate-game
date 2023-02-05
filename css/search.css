@@ -7,6 +7,7 @@ body {
 }
 
 .body-block {
+	display: none;
 	justify-content: flex-start;
 	padding: 3rem 5rem;
 	padding-top: 4rem;
@@ -21,18 +22,20 @@ body {
 	align-items: center;
 	text-align: center;
 	width: 100%;
-	font-family: 'License Plate';
+	font-family: var(--font3);
 	font-size: var(--font-size);
 	margin-bottom: var(--container-spacing);
 	border: 0;
 	outline: 0;
 	background: transparent;
-	color: var(--color1);
+	color: white;
 }
 .letter-input::placeholder {
-	font-family: 'Saira Semi Condensed', sans-serif;
-	font-size: calc(var(--font-size) / 2);
-	font-weight: 600;
+	font-family: var(--font1);
+	font-size: 4rem;
+	font-weight: 700;
+	color: var(--color3);
+	text-transform: uppercase;
 }
 
 
@@ -41,7 +44,16 @@ body {
 .filtered-container {
 	position: relative;
 	display: flex;
+	flex-direction: row;
 	align-items: center;
+}
+
+.immediate-container, .properties-container > div {
+	background: white;
+	color: var(--color2);
+	border: 0.5rem solid var(--color5);
+	border-radius: 0.9rem;
+	filter: drop-shadow(0.5rem 0.5rem 0 var(--color5));
 }
 
 .immediate-container {
@@ -54,7 +66,11 @@ body {
 	margin-right: var(--container-spacing);
 }
 
-.word-count {margin-bottom: var(--container-spacing);}
+.word-count {
+	display: block;
+	margin-bottom: var(--container-spacing);
+}
+.actual-count {font-weight: 700;}
 
 .sample-word-list {
 	--word-lines: 7;
@@ -91,22 +107,22 @@ body {
 	text-align: center;
 }
 
-.properties-container > * {
+.properties-container > div {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
 	width: 100%;
+	padding: 0 2rem;
 	white-space: nowrap;
 }
 .middlest-container {margin: var(--container-spacing) 0;}
 
-.actual-count,
-.sample-word-list,
-.properties-container > * > *:nth-child(2),
-.all-word-list {
-	color: var(--color2);
+.actual-longest,
+.actual-middlest,
+.actual-shortest {
+	font-weight: 700;
 }
 
 

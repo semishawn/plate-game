@@ -103,23 +103,35 @@ function startGame(seed) {
 
 
 // Start game on play today button click
-$(".play-today-btn").click(function() {
+$(".today-option").click(function() {
 	var now = new Date();
 	var daysSinceEpoch = Math.floor(now / 86400000);
-	var seed = new Math.seedrandom(daysSinceEpoch);
-	startGame(seed());
-	hideDialogue();
+	var todaySeed = new Math.seedrandom(daysSinceEpoch);
+	countdown(todaySeed);
 });
 
 // Start game on play from seed button click
+$(".seed-option").click(function() {
+	$(".intro-btn-container").addClass("wants-to-play-seed");
+	$(".seed-input").focus();
+});
+
+$(".back-btn").click(function() {
+	$(".intro-btn-container").removeClass("wants-to-play-seed");
+});
+
 $(".play-seed-btn").click(function() {
 	if ($(".seed-input").val().length > 0) {
 		var seedInput = $(".seed-input").val();
-		var seed = new Math.seedrandom(seedInput);
-		startGame(seed());
-		hideDialogue();
+		var customSeed = new Math.seedrandom(seedInput);
+		countdown(customSeed);
 	}
 });
+
+function countdown(seed) {
+	startGame(seed(seed));
+	$(".intro-container").removeClass("show");
+}
 
 
 

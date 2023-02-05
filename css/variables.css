@@ -1,15 +1,26 @@
 :root {
 	/* Colors */
-	--color1: #584053;
-	--color2: #fcbc66;
-	--color3: #ded6d6;
+	--color1: #090821;
+	--color2: #201e31;
+	--color3: #312f44;
+	--color4: #fc2f70;
+
+	--color1: #58608f;
+	--color2: #7580BF;
+	--color3: #9AA3D9;
+	--color4: #BBC8F2;
+	--color5: maroon;
+
+	/* Fonts */
+	--font1: "Ciutadella Rounded";
+	--font2: "Gimbo";
+	--font3: "License Plate";
 
 	/* Container Variables */
 	--line-height: 1.25em;
 	--container-border-width: 0.4rem;
-	--container-spacing: 1rem;
+	--container-spacing: 1.8rem;
 	--transition: 0.1s;
-	--drop-shadow: drop-shadow(0 0.5rem 0.5rem rgba(0, 0, 0, 0.4));
 
 	/* Input Variables */
 	--input-spacing: 0.4rem;

@@ -34,5 +34,18 @@ def mostWords():
 
 
 
+def superlatives():
+	superlativeList = []
+
+	for word in wordList:
+		if word.endswith("est"):
+			superlativeList.append(word)
+
+	with open("superlatives.txt", "w") as file:
+		for superlative in superlativeList:
+			file.write("%s\n" % superlative)
+
+
+
 if __name__ == "__main__":
-    mostWords()
+	superlatives()
