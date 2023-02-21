@@ -24,7 +24,7 @@ body {
 	width: 100%;
 	font-family: var(--font3);
 	font-size: var(--font-size);
-	margin-bottom: var(--container-spacing);
+	margin-bottom: 1rem;
 	border: 0;
 	outline: 0;
 	background: transparent;
@@ -42,13 +42,14 @@ body {
 
 /* Filtered Container */
 .filtered-container {
+	--gap: 1rem;
 	position: relative;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 }
 
-.immediate-container, .properties-container > div {
+.immediate-container, .properties-container > div, .all-wrapper {
 	background: white;
 	color: var(--color2);
 	border: 0.5rem solid var(--color5);
@@ -63,36 +64,46 @@ body {
 	text-align: center;
 	height: 100%;
 	width: 25rem;
-	margin-right: var(--container-spacing);
+	padding: 1rem;
+	padding-top: 2rem;
+	margin-right: var(--gap);
 }
 
-.word-count {
-	display: block;
-	margin-bottom: var(--container-spacing);
-}
+.word-count {display: block;}
 .actual-count {font-weight: 700;}
 
 .sample-word-list {
 	--word-lines: 7;
 	display: flex;
 	flex-wrap: wrap;
+	flex-direction: row;
 	justify-content: center;
 	align-content: start;
 	height: calc(var(--word-lines) * var(--line-height) + 2 * var(--word-lines) * var(--word-margin-v));
-	overflow-y: hidden;
+	width: 100%;
+	margin: var(--container-spacing) 0;
+	overflow: hidden;
 }
 
 .filtered-word {margin: var(--word-margin-v) var(--word-margin-h);}
 
 .show-all-btn {
-	visibility: hidden;
+	justify-content: center;
+	height: 3rem;
 	width: 100%;
-	margin-top: var(--container-spacing);
-	color: var(--color1);
+	opacity: 1;
+	background: var(--color3);
+	color: white;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	transition: all var(--transition);
 }
 .show-all-btn:hover {
-	background: var(--color1);
-	color: var(--color2); 
+	background: var(--color5);
+}
+.hide-btn {
+	opacity: 0;
+	pointer-events: none;
 }
 
 
@@ -117,7 +128,7 @@ body {
 	padding: 0 2rem;
 	white-space: nowrap;
 }
-.middlest-container {margin: var(--container-spacing) 0;}
+.middlest-container {margin: var(--gap) 0;}
 
 .actual-longest,
 .actual-middlest,
@@ -129,30 +140,61 @@ body {
 
 /* Show All Words */
 .all-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+	background: var(--color2);
+	padding: 4rem;
+	pointer-events: all;
+	transition: all var(--transition);
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.hide-all-container {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.all-wrapper-wrapper {
 	position: relative;
-	flex-direction: column;
+}
+
+.all-wrapper {
+	padding: 2rem;
+	z-index: 10;
 }
 
 .sort-container {
 	display: flex;
+	flex-direction: row;
 	justify-content: center;
 	margin-bottom: var(--container-spacing);
 }
 
 .sort-container .btn {
-	opacity: 0.5;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	height: 3rem;
 	width: 15rem;
-	color: var(--color1);
+	color: white;
+	background: var(--color4);
+	transition: all var(--transition);
 }
-.sort-container .btn:hover {opacity: 1;}
+.sort-container .btn ~ .btn {margin-left: 0.5rem;}
+.sort-container .btn:hover {
+	background: var(--color5);
+}
 input[name="sort"]:checked + label {
-	opacity: 1;
-	background: var(--color1);
-	color: var(--color2);
+	background: var(--color2);
+	color: white;
 }
 
 .all-word-list {
-	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 }
@@ -161,6 +203,7 @@ input[name="sort"]:checked + label {
 	top: calc(var(--dimension) / -2);
 	right: calc(var(--dimension) / -2);
 	filter: none;
+	z-index: 11;
 }
 
 

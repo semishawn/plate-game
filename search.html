@@ -27,7 +27,7 @@
 
 			<div class="sample-word-list"></div>
 
-			<div class="btn show-all-btn">Show All</div>
+			<div class="show-all-btn hide-btn">Show All</div>
 		</div>
 
 		<div class="properties-container">
@@ -57,17 +57,21 @@
 
 
 
-	<div class="body-block">
-		<div class="all-container flex-show">
-			<div class="circle-btn close-all-btn"><i class="fas fa-xmark"></i></div>
-			<div class="sort-container">
-				<input type="radio" name="sort" id="alpha-sort" autocomplete="off" checked>
-				<label class="btn" for="alpha-sort"><i class="fas fa-sort-alpha-down"></i>Sort Alphabetically</label>
+	<div class="all-container hide-all-container">
+		<div class="all-wrapper-wrapper">
+			<div class="circle-btn close-all-btn special-hover"><i class="fas fa-xmark"></i></div>
 
-				<input type="radio" name="sort" id="length-sort" autocomplete="off">
-				<label class="btn" for="length-sort"><i class="fas fa-ruler"></i>Sort by Word Length</label>
+			<div class="all-wrapper">
+				<div class="sort-container">
+					<input type="radio" name="sort" id="alpha-sort" autocomplete="off" checked>
+					<label class="btn" for="alpha-sort"><i class="fas fa-sort-alpha-down"></i>Sort Alphabetically</label>
+		
+					<input type="radio" name="sort" id="length-sort" autocomplete="off">
+					<label class="btn" for="length-sort"><i class="fas fa-ruler"></i>Sort by Word Length</label>
+				</div>
+	
+				<div class="all-word-list"></div>
 			</div>
-			<div class="all-word-list"></div>
 		</div>
 	</div>
 

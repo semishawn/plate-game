@@ -51,7 +51,8 @@ $(".letter-input").on("propertychange input", function() {
 
 		var sampleList = $(".sample-word-list");
 		sampleList.html(filteredAllHtml);
-		if (sampleList[0].offsetHeight < sampleList[0].scrollHeight) $(".show-all-btn").css("visibility", "visible");
+		if (sampleList[0].offsetHeight < sampleList[0].scrollHeight)
+			$(".show-all-btn").removeClass("hide-btn");
 
 		$(".actual-longest").html(longest);
 		$(".actual-middlest").html(middlest);
@@ -61,7 +62,7 @@ $(".letter-input").on("propertychange input", function() {
 	} else {
 		$(".actual-count").html("0");
 		$(".sample-word-list").html("");
-		$(".show-all-btn").css("visibility", "hidden");
+		$(".show-all-btn").addClass("hide-btn");
 		$(".actual-longest, .actual-middlest, .actual-shortest").html("???");
 	}
 });
@@ -69,11 +70,11 @@ $(".letter-input").on("propertychange input", function() {
 
 
 $(".show-all-btn").click(function() {
-	showDialogue(".all-container");
+	$(".all-container").removeClass("hide-all-container");
 });
 
 $(".close-all-btn").click(function() {
-	hideDialogue();
+	$(".all-container").addClass("hide-all-container");
 });
 
 
