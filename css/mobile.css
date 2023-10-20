@@ -40,6 +40,8 @@ body {
 	margin: 0;
 }
 
+.sample-word-list {--word-lines: 5;}
+
 .properties-container {
 	width: 100%;
 	margin-top: var(--gap-v);
