@@ -7,7 +7,7 @@ body {
 }
 
 .circle-btn {
-	--dimension: 7rem;
+	--dimension: 6rem;
 	top: 0;
 	left: 0;
 	border-radius: 0;
