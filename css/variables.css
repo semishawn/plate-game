@@ -1,6 +1,6 @@
 :root {
 	/* Colors */
-	--color1: #090821;
+	/* --color1: #090821;
 	--color2: #201e31;
 	--color3: #312f44;
 	--color4: #fc2f70;
@@ -10,13 +10,12 @@
 	--color2: #7580BF;
 	--color3: #9AA3D9;
 	--color4: #BBC8F2;
-	--color5: maroon;
+	--color5: maroon; */
 
-	--color1: #173f5f;
-	--color2: #20639b;
-	--color3: #3caea3;
-	--color4: #f6d55c;
-	--color5: #ed553b;
+	--color1: #2a4d69;
+	--color2: #4b86b4;
+	--color3: #53d2db;
+	--color4: white;
 
 	/* Fonts */
 	--font1: "Ciutadella Rounded";

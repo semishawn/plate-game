@@ -16,7 +16,7 @@
 	align-items: center;
 	text-align: center;
 	opacity: 0;
-	background: var(--color2);
+	background: var(--color1);
 	transition: all var(--transition);
 	z-index: 9999;
 	pointer-events: none;
@@ -30,7 +30,7 @@
 }
 
 .intro-description-container {
-	margin-top: 1.2rem;
+	margin-top: 1.5rem;
 	margin-bottom: 2rem;
 }
 
@@ -44,17 +44,14 @@
 	letter-spacing: 0.1rem;
 	white-space: nowrap;
 	padding: 0 1em;
-	border: 2px solid var(--color4);
 	border-radius: 0.3rem;
 	background: var(--color3);
 }
 
-.intro-middle-container {
-	margin: var(--container-spacing) 0;
-}
+.intro-middle-container {margin: 1.5rem 0;}
 
 .intro-directions-container {display: block;}
-.intro-directions-container b {color: var(--color4);}
+.intro-directions-container b {color: var(--color3);}
 
 .intro-btn-container {
 	position: relative;
@@ -96,8 +93,8 @@
 	font-weight: 500;
 	padding: 0 1em;
 	background: var(--color3);
-	color: white;
-	border: 2px solid var(--color4);
+	color: var(--color4);
+	border: 0;
 	border-radius: 0.3rem;
 	outline: 0;
 }
@@ -112,7 +109,7 @@
 	font-size: 18px;
 	padding: 0 1em;
 	background: transparent;
-	color: white;
+	color: var(--color4);
 	border: 0;
 	border-radius: 0.3rem;
 	cursor: pointer;
@@ -190,7 +187,7 @@
 	border: 0;
 	outline: 0;
 	background: transparent;
-	color: white;
+	color: var(--color4);
 	text-transform: uppercase;
 }
 .word-input::placeholder {color: var(--color3);}
@@ -204,8 +201,8 @@
 	font-family: var(--font1);
 	font-size: 1.2rem;
 	font-weight: 700;
-	background: var(--color5);
-	color: white;
+	background: var(--color2);
+	color: var(--color4);
 	border: 0;
 	border-radius: 0.3rem;
 	cursor: pointer;
@@ -219,7 +216,7 @@
 	padding: 0.3em 0.7em;
 	margin-left: 1rem;
 	background: black;
-	color: white;
+	color: var(--color4);
 	transition: all var(--transition);
 }
 
@@ -315,7 +312,7 @@
 	width: calc((100% - 9 * var(--key-spacing)) / 10);
 	border: 0;
 	background: black;
-	color: white;
+	color: var(--color4);
 }
 .key ~ .key {margin-left: var(--key-spacing);}
 

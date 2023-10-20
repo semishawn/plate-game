@@ -15,8 +15,8 @@ body {
 	font-size: 16px;
 	font-weight: 500;
 	margin: 0;
-	background: var(--color2);
-	color: white;
+	background: var(--color1);
+	color: var(--color4);
 }
 
 * {
@@ -66,13 +66,13 @@ button {
 }
 .big-text > div:nth-child(1) {
 	position: absolute;
-	color: var(--color5);
-	-webkit-text-stroke: 0.15em var(--color5);
-	filter: drop-shadow(0.1em 0.1em 0 var(--color5));
+	color: var(--color2);
+	-webkit-text-stroke: 0.15em var(--color2);
+	filter: drop-shadow(0 0.15em 0 var(--color2));
 	z-index: 10;
 }
 .big-text > div:nth-child(2) {
-	color: white;
+	color: var(--color4);
 	z-index: 11;
 }
 
@@ -81,7 +81,7 @@ button {
 	flex-direction: column;
 	border: 0;
 	border-radius: 0.5rem;
-	color: white;
+	color: var(--color4);
 	cursor: pointer;
 	overflow: hidden;
 	text-decoration: none;
@@ -110,8 +110,8 @@ button {
 	font-weight: 700;
 	line-height: 1;
 	text-transform: uppercase;
-	background: var(--color5);
-	color: white;
+	background: var(--color2);
+	color: var(--color4);
 }
 
 .circle-btn {
@@ -126,13 +126,13 @@ button {
 	font-size: 1.8rem;
 	border-radius: 999rem;
 	background: var(--color3);
-	color: white;
+	color: var(--color4);
 	cursor: pointer;
 }
 
 .special-hover {transition: all var(--transition);}
 .special-hover:hover {
-	outline: 4px solid white;
+	outline: 4px solid var(--color4);
 	transform: scale(1.05);
 }
 
