@@ -4,6 +4,7 @@
 body {
 	--shadow: 1.8rem;
 	--gap-v: 3.5rem;
+	padding-bottom: var(--shadow);
 }
 
 .circle-btn {
