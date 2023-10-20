@@ -212,8 +212,8 @@ input[name="sort"]:checked + label {
 }
 
 .close-all-btn {
-	top: calc(var(--dimension) / -2);
-	right: calc(var(--dimension) / -2);
+	top: calc((var(--dimension) - var(--shadow)) / -2);
+	right: calc((var(--dimension) - var(--shadow)) / -2);
 	filter: none;
 	z-index: 11;
 }
