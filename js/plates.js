@@ -46,5 +46,14 @@ plateList = [
 			offset: 4
 		},
 		divider: {width: 3}
+	},
+	{
+		state: "vt",
+		text: {
+			size: 8,
+			color: "#ffffff",
+			offset: 1.5
+		},
+		divider: {width: 3}
 	}
 ]

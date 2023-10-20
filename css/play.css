@@ -24,10 +24,14 @@
 
 .intro-wrapper > * {width: 100%;}
 
-.welcome {font-size: 6rem;}
+.welcome {
+	font-family: var(--font2);
+	font-size: 6rem;
+}
 
 .intro-description-container {
-	margin: 2rem 0;
+	margin-top: 1.2rem;
+	margin-bottom: 2rem;
 }
 
 .how-to-play {
@@ -60,12 +64,16 @@
 	width: min-content;
 }
 
-.intro-btn-container > * {
-	height: 15rem;
+.intro-btn-container .btn {
+	max-height: 15rem;
 	width: 15rem;
 }
+.intro-btn-container .btn + .btn {margin-left: 1rem;}
 
-.seed-option {margin-left: 1rem;}
+.option-container {
+	display: flex;
+	flex-direction: row;
+}
 
 .seed-container {
 	position: absolute;
@@ -82,12 +90,11 @@
 
 .seed-input {
 	height: 2.8rem;
-	width: 13rem;
+	width: 100%;
 	font-family: var(--font1);
 	font-size: 18px;
 	font-weight: 500;
 	padding: 0 1em;
-	margin: 1rem 0;
 	background: var(--color3);
 	color: white;
 	border: 2px solid var(--color4);
@@ -96,22 +103,14 @@
 }
 
 .play-seed-btn {
-	height: 2.8rem;
-	font-size: 18px;
-	font-weight: 900;
-	padding: 0 1.5rem;
-	background: var(--color5);
-	color: white;
-	border: 0;
-	border-radius: 0.3rem;
-	cursor: pointer;
+	min-width: 100%;
+	margin: 1rem 0;
 }
 
 .back-btn {
 	height: 2.8rem;
 	font-size: 18px;
 	padding: 0 1em;
-	margin-top: 1rem;
 	background: transparent;
 	color: white;
 	border: 0;
@@ -121,7 +120,7 @@
 .back-btn svg {margin-right: 1em;}
 
 .wants-to-play-seed .seed-container {transition-delay: 0.1s;}
-.wants-to-play-seed .btn {
+.wants-to-play-seed .option-container {
 	opacity: 0;
 	pointer-events: none;
 }
@@ -158,6 +157,7 @@
 	align-items: center;
 	height: 20rem;
 	width: 40rem;
+	filter: drop-shadow(0 0.2rem 0 var(--color3));
 }
 
 .plate-background {
@@ -174,7 +174,7 @@
 }
 
 .plate-number * {font-family: var(--font3);}
-
+/* .plate-chars1 {background: yellow;} */
 .plate-number svg {margin-bottom: 1rem;}
 
 
@@ -196,6 +196,7 @@
 .word-input::placeholder {color: var(--color3);}
 
 .submit-btn {
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 3rem;
@@ -212,7 +213,6 @@
 .submit-btn svg {margin-right: 0.5em;}
 
 .submit-btn .kbd {
-	display: inline;
 	font-family: var(--font1);
 	font-size: 0.75rem;
 	font-weight: 500;
@@ -221,7 +221,6 @@
 	background: black;
 	color: white;
 	transition: all var(--transition);
-	transform: translateY(-10px);
 }
 
 .skip-btn {background: #ffda66;}
@@ -236,6 +235,7 @@
 	position: absolute;
 	top: calc(var(--spacing) / 2);
 	font-size: var(--font-size);
+	font-weight: 900;
 }
 .score-container div, .timer-container div {display: block;}
 

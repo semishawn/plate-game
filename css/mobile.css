@@ -1,8 +1,6 @@
 /* General Styles */
 :root {font-size: 8px;}
 
-.body-block {padding: 3rem;}
-
 
 
 /* Play */
@@ -31,7 +29,7 @@
 
 .immediate-container {
 	width: 100%;
-	padding: 2rem 0;
+	padding: 2rem 2rem;
 	margin: 0;
 }
 
@@ -42,3 +40,13 @@
 	margin: 0;
 	margin-top: var(--container-spacing);
 }
+
+.properties-container span + span {
+	margin-top: 0.5rem;
+}
+
+
+
+/* All words */
+.sort-container {width: 100%;}
+.sort-container .btn {flex-grow: 1;}

@@ -62,7 +62,6 @@ button {
 /* Buttons */
 .big-text {
 	position: relative;
-	font-family: var(--font2);
 	text-transform: uppercase;
 }
 .big-text > div:nth-child(1) {
@@ -81,10 +80,11 @@ button {
 	display: flex;
 	flex-direction: column;
 	border: 0;
-	border-radius: 8px;
+	border-radius: 0.5rem;
 	color: white;
 	cursor: pointer;
 	overflow: hidden;
+	text-decoration: none;
 }
 .btn svg {margin-right: 1rem;}
 
@@ -108,6 +108,7 @@ button {
 	font-family: var(--font1);
 	font-size: 1.4rem;
 	font-weight: 700;
+	line-height: 1;
 	text-transform: uppercase;
 	background: var(--color5);
 	color: white;

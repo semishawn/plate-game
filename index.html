@@ -40,7 +40,7 @@
 		
 			<button class="submit-btn special-hover" tabindex="-1">
 				<i class="fas fa-car"></i>
-				DRIVE!
+				<div>DRIVE!</div>
 				<div class="kbd">Enter</div>
 			</button>
 			<!-- <button class="btn skip-btn" tabindex="-1"><i class="fas fa-truck"></i>Pass!<kbd>Tab</kbd></button>
@@ -104,8 +104,8 @@
 		<div class="intro-container show">
 			<div class="intro-wrapper">
 				<div class="welcome big-text">
-					<div>Plate Game</div>
-					<div>Plate Game</div>
+					<div>{&nbsp;&nbsp;Plate Game&nbsp;&nbsp;}</div>
+					<div>{&nbsp;&nbsp;Plate Game&nbsp;&nbsp;}</div>
 				</div>
 	
 				<div class="intro-description-container">
@@ -121,25 +121,36 @@
 				</div>
 		
 				<div class="intro-btn-container">
-					<button class="btn today-option special-hover">
-						<div class="btn-pic-container">
-							<img class="btn-pic" src="img/btn-pics/harlequin.webp">
-						</div>
-						<div class="btn-tag">Play Today's Plate</div>
-					</button>
+					<div class="option-container">
+						<button class="btn today-option special-hover">
+							<div class="btn-pic-container">
+								<img class="btn-pic" src="img/btn-pics/harlequin.webp">
+							</div>
+							<div class="btn-tag">Play Today's Plate</div>
+						</button>
+		
+						<div class="btn seed-option special-hover">
+							<div class="btn-pic-container">
+								<img class="btn-pic" src="img/btn-pics/plant-car.webp">
+							</div>
 	
-					<div class="btn seed-option special-hover">
-						<div class="btn-pic-container">
-							<img class="btn-pic" src="img/btn-pics/robin.webp">
+							<div class="btn-tag">Play Seeded Plate</div>
 						</div>
-
-						<div class="btn-tag">Play Seeded Plate</div>
+	
+						<a class="btn search-option special-hover" href="search.html">
+							<div class="btn-pic-container">
+								<img class="btn-pic" src="img/btn-pics/cop.webp">
+							</div>
+	
+							<div class="btn-tag">Search a Plate</div>
+						</a>
 					</div>
 
 					<div class="seed-container">
-						<div>Input Custom Seed</div>
-						<input class="seed-input" type="text" autocomplete="off">
-						<button class="play-seed-btn special-hover">PLAY</button>
+						<input class="seed-input" type="text" placeholder="Enter custom seed..." autocomplete="off">
+
+						<div class="btn play-seed-btn btn-tag special-hover">GENERATE PLATE<br>FROM SEED</div>
+
 						<button class="back-btn special-hover"><i class="fa-solid fa-arrow-left-long"></i>GO BACK</button>
 					</div>
 				</div>
