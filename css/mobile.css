@@ -8,11 +8,11 @@ body {
 }
 
 .circle-btn {
-	--dimension: 8rem;
+	--dimension: 7rem;
 	top: 0;
 	left: 0;
 	border-radius: 0;
-	border-bottom-right-radius: 2rem;
+	border-bottom-right-radius: 1.5rem;
 }
 
 
